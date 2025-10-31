@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor Macro</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+  <script src="/static/script_ipad.js" defer></script>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          padding: 0px;
+          background: #f9f9f9;
+      }
+
+      h1 {
+          text-align: center;
+      }
+
+      #grafico-container {
+          max-width: 1000px;
+          height: 600px;
+          margin: auto;
+          padding: 5px;
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+
+      canvas {
+          width: 100% !important;
+          height: 100% !important;
+      }
+  </style>
+</head>
+<body>
+  <div style="margin: 0px;">
+    <a href="/premercado" style="background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 8px; text-decoration: none; margin-right: 10px;">
+      Pré-Mercado
+    </a>
+    <button onclick="controlarColetor('iniciar')" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 8px; margin-right: 10px;">
+      Iniciar Coletor
+    </button>
+    <button onclick="controlarColetor('parar')" style="background-color: red; color: white; padding: 10px; border: none; border-radius: 8px;">
+      Parar Coletor
+    </button>
+    <strong>Status do Coletor:</strong>
+    <span id="status-indicador" style="color: gray;">Verificando...</span>
+
+    <p id="status-coletor" style="margin: 0; font-weight: bold;"></p>
+  </div>
+  <div id="grafico-container">
+      <canvas id="grafico"></canvas>
+  </div>
+</body>
+</html>
